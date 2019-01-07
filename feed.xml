@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>DM</title>
+    <link href="https://danielemurrau.github.io/feed.xml" rel="self" />
+    <link href="https://danielemurrau.github.io" />
+    <updated>2019-01-07T13:24:00+01:00</updated>
+    <author>
+        <name>Daniele</name>
+    </author>
+    <id>https://danielemurrau.github.io</id>
+
+    <entry>
+        <title>Post 1</title>
+        <author>
+            <name>Daniele</name>
+        </author>
+        <link href="https://danielemurrau.github.io/post-1.html"/>
+        <id>https://danielemurrau.github.io/post-1.html</id>
+
+        <updated>2019-01-07T12:18:10+01:00</updated>
+            <summary></summary>
+        <content></content>
+    </entry>
+</feed>
