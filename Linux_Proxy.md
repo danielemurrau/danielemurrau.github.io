@@ -26,7 +26,7 @@ $ export http_proxy=http://foo:bar@127.0.0.1:3128/
 $ export http_proxy=http://USERNAME:PASSWORD@proxy-server.mycorp.com:3128/
 
 
->Set proxy for all systrem users:
+>Set proxy for all system users:
 
 vi /etc/profile
 
