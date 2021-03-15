@@ -1,6 +1,14 @@
 
 Linux Proxy
 =====
+
+|Proxy Environment Variables
+Variable|	Description
+http_proxy|	Proxy server for HTTP Traffic.
+https_proxy|	Proxy server for HTTPS traffic
+ftp_proxy|	Proxy server for FTP traffic
+no_proxy|	Patterns for IP addresses or domain names that shouldn’t use the proxy
+
 >Without username/pass:
 
 $ export http_proxy=http://server-ip:port/
