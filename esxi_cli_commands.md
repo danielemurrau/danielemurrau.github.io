@@ -7,7 +7,7 @@ ESXi cli commands
 
 > search for a specific vm 
 
-\# esxcli vm process list | grep -i VMNAME
+\# esxcli vm process list \| grep -i VMNAME
 
 >Kill vm on an host with World ID
 
