@@ -16,3 +16,14 @@ ESXi cli commands
 Three power-off methods are available:<br>
 *Soft* is the most graceful, *hard* performs an immediate shutdown, and *force* should be used as a last resort.
 
+>Check build and version number
+
+\# esxcli system version get
+
+>Installation date
+
+\# esxcli system stats installtime get
+
+>List installed VIBS, a VIB \(VMware Installation Bundle) is a software package that gets installed on a vSphere ESXi host that contains things like drivers
+
+\# esxcli software vib list
