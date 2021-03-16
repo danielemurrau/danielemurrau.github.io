@@ -12,3 +12,7 @@ ESXi cli commands
 >Kill vm on an host with World ID
 
 \# esxcli vm process kill –type=[soft,hard,force] –world-id=WorldNumber
+
+Three power-off methods are available:<br>
+*Soft* is the most graceful, *hard* performs an immediate shutdown, and *force* should be used as a last resort.
+
