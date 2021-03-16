@@ -28,3 +28,8 @@ Three power-off methods are available:<br>
 >List installed VIBS, a VIB \(VMware Installation Bundle) is a software package that gets installed on a vSphere ESXi host that contains things like drivers
 
 \# esxcli software vib list
+
+>List all datastore connected to the host
+
+\#esxcli storage filesystem list
+
