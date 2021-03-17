@@ -6,9 +6,34 @@ https://ubuntu.com/server/docs/service-sssd
 
 \# sudo apt install sssd-ad sssd-tools realmd adcli
 
-2. map the dc in file /etc/hosts 
+2. map the dc in file /etc/hosts and set the DC as nameserver in netplan
 
 \# echo "x.x.x.x lab.private" >> /etc/hosts
+
+netplan:
+
+\# vi /etc/netplan/00-installer-config.yaml
+
+
+\# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    ens160:
+      addresses:
+      - 10.x.x.x/24
+      gateway4: 10.x.x.1
+      nameservers:
+        addresses:
+        - **10.x.x.x**
+  version: 2
+  
+\# netplan apply
+
+test resolution:
+
+\# dig -t SRV _ldap._tcp.lab.private @lab.private
+
+
 
 3. discover the domain before join
 
@@ -57,6 +82,11 @@ lab.private
   login-formats: %U@lab.private
   login-policy: allow-realm-logins
   
+
+6. run pam auto update to have the homedir automatic creation at login-formats
+
+\# pam-auth-update --enable mkhomedir
+
 
 
   
