@@ -2,6 +2,7 @@ SSD and Active Directory on  Ubuntu 20.04.1 LTS
 =====
 https://ubuntu.com/server/docs/service-sssd
 
+
 1. Install 
 
 \# sudo apt install sssd-ad sssd-tools realmd adcli
@@ -86,6 +87,16 @@ lab.private
 6. run pam auto update to have the homedir automatic creation at login-formats
 
 \# pam-auth-update --enable mkhomedir
+
+7. check if is working fine
+
+\# id USERNAME@lab.private
+
+uid=17401106(USERNAME@lab.private) gid=17400513(domain USERNAME@lab.private) groups=17400513(domain users@lab.private)
+
+8. check login
+
+\# login USERNAME@lab.private
 
 
 
