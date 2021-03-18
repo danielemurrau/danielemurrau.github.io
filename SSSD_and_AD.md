@@ -16,17 +16,17 @@ netplan:
 \# vi /etc/netplan/00-installer-config.yaml
 
 
-\# This is the network config written by 'subiquity'
-network:
-  ethernets:
-    ens160:
-      addresses:
-      - 10.x.x.x/24
-      gateway4: 10.x.x.1
-      nameservers:
-        addresses:
-        - **10.x.x.x**
-  version: 2
+\# This is the network config written by 'subiquity' <br>
+network:<br>
+  ethernets:<br>
+    ens160:<br>
+      addresses:<br>
+      - 10.x.x.x/24<br>
+      gateway4: 10.x.x.1<br>
+      nameservers:<br>
+        addresses:<br>
+        - **10.x.x.x**<br>
+  version: 2<br>
   
 \# netplan apply
 
@@ -41,23 +41,23 @@ test resolution:
 \# realm -v discover lab.private
 
 
-\* Resolving: _ldap._tcp.lab.private
-\* Resolving: lab.private
-\* Performing LDAP DSE lookup on: 10.39.132.130
-\* Successfully discovered: lab.private
-lab.private
-  type: kerberos
-  realm-name: LAB.PRIVATE
-  domain-name: lab.private
-  configured: no
-  server-software: active-directory
-  client-software: sssd
-  required-package: sssd-tools
-  required-package: sssd
-  required-package: libnss-sss
-  required-package: libpam-sss
-  required-package: adcli
-  required-package: samba-common-bin
+\* Resolving: _ldap._tcp.lab.private<br>
+\* Resolving: lab.private<br>
+\* Performing LDAP DSE lookup on: 10.39.132.130<br>
+\* Successfully discovered: lab.private<br>
+lab.private<br>
+  type: kerberos<br>
+  realm-name: LAB.PRIVATE<br>
+  domain-name: lab.private<br>
+  configured: no<br>
+  server-software: active-directory<br>
+  client-software: sssd<br>
+  required-package: sssd-tools<br>
+  required-package: sssd<br>
+  required-package: libnss-sss<br>
+  required-package: libpam-sss<br>
+  required-package: adcli<br>
+  required-package: samba-common-bin<br>
   
 >4. join the domain using administrator@lab.private password
   
@@ -67,21 +67,21 @@ lab.private
   
 \# realm discover lab.private
 
-lab.private
-  type: kerberos
-  realm-name: LAB.PRIVATE
-  domain-name: lab.private
-  configured: kerberos-member
-  server-software: active-directory
-  client-software: sssd
-  required-package: sssd-tools
-  required-package: sssd
-  required-package: libnss-sss
-  required-package: libpam-sss
-  required-package: adcli
-  required-package: samba-common-bin
-  login-formats: %U@lab.private
-  login-policy: allow-realm-logins
+lab.private<br>
+  type: kerberos<br>
+  realm-name: LAB.PRIVATE<br>
+  domain-name: lab.private<br>
+  configured: kerberos-member<br>
+  server-software: active-directory<br>
+  client-software: sssd<br>
+  required-package: sssd-tools<br>
+  required-package: sssd<br>
+  required-package: libnss-sss<br>
+  required-package: libpam-sss<br>
+  required-package: adcli<br>
+  required-package: samba-common-bin<br>
+  login-formats: %U@lab.private<br>
+  login-policy: allow-realm-logins<br>
   
 
 >6. run pam auto update to have the homedir automatic creation at login-formats
