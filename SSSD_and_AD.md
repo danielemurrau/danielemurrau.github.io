@@ -3,11 +3,11 @@ SSD and Active Directory on  Ubuntu 20.04.1 LTS
 https://ubuntu.com/server/docs/service-sssd
 
 
-1. Install 
+|1. Install 
 
 \# sudo apt install sssd-ad sssd-tools realmd adcli
 
-2. map the dc in file /etc/hosts and set the DC as nameserver in netplan
+|2. map the dc in file /etc/hosts and set the DC as nameserver in netplan
 
 \# echo "x.x.x.x lab.private" >> /etc/hosts
 
@@ -36,7 +36,7 @@ test resolution:
 
 
 
-3. discover the domain before join
+|3. discover the domain before join
 
 \# realm -v discover lab.private
 
@@ -59,11 +59,11 @@ lab.private
   required-package: adcli
   required-package: samba-common-bin
   
-  4. join the domain using administrator@lab.private password
+|4. join the domain using administrator@lab.private password
   
   \# realm -v join lab.private
   
-  5. after the jon check again with the discovery
+|5. after the jon check again with the discovery
   
 \# realm discover lab.private
 
@@ -84,19 +84,32 @@ lab.private
   login-policy: allow-realm-logins
   
 
-6. run pam auto update to have the homedir automatic creation at login-formats
+|6. run pam auto update to have the homedir automatic creation at login-formats
 
 \# pam-auth-update --enable mkhomedir
 
-7. check if is working fine
+|7. check if is working fine
 
 \# id USERNAME@lab.private
 
 uid=17401106(USERNAME@lab.private) gid=17400513(domain USERNAME@lab.private) groups=17400513(domain users@lab.private)
 
-8. check login
+|8. check login
 
 \# login USERNAME@lab.private
+
+
+|9. configure SSSD to use short login without domain
+
+in sssd.conf comment:
+
+use_fully_qualified_names = True
+
+and add:
+
+use_fully_qualified_names = False
+
+
 
 
 
