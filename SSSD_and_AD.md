@@ -2,6 +2,11 @@ SSD and Active Directory on  Ubuntu 20.04.1 LTS
 =====
 https://ubuntu.com/server/docs/service-sssd
 
+In this installation we have 1 linux server and 1 Windows 2019 Domain Controller both on lan 10.x.x.x/24
+
+Linux server: 10.x.x.50
+
+Windows 2019 DC: 10.x.x.130
 
 >1. Install 
 
@@ -9,7 +14,7 @@ https://ubuntu.com/server/docs/service-sssd
 
 >2. map the dc in file /etc/hosts and set the DC as nameserver in netplan
 
-\# echo "x.x.x.x lab.private" >> /etc/hosts
+\# echo "10.x.x.130 lab.private" >> /etc/hosts
 
 netplan:
 
@@ -25,7 +30,7 @@ network:<br>
       gateway4: 10.x.x.1<br>
       nameservers:<br>
         addresses:<br>
-        - **10.x.x.x**<br>
+        - **10.x.x.130**<br>
   version: 2<br>
   
 \# netplan apply
@@ -43,7 +48,7 @@ test resolution:
 
 \* Resolving: _ldap._tcp.lab.private<br>
 \* Resolving: lab.private<br>
-\* Performing LDAP DSE lookup on: 10.39.132.130<br>
+\* Performing LDAP DSE lookup on: 10.x.x.130<br>
 \* Successfully discovered: lab.private<br>
 lab.private<br>
   type: kerberos<br>
