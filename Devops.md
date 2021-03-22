@@ -1,1 +1,1 @@
-![DevOps Roadmap](https://danielemurrau@github.io/images/devops.png)
+![DevOps Roadmap](https://danielemurrau.github.io/images/devops.png)
