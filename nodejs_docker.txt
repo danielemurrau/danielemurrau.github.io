@@ -1,0 +1,23 @@
+https://medium.com/statuscode/dockerising-a-node-js-and-mongodb-app-d22047e2806f
+
+https://www.youtube.com/watch?v=OXE2a8dqIAI
+
+https://gist.github.com/aerrity/fd393e5511106420fba0c9602cc05d35
+
+https://www.mindstick.com/articles/1455/counter-example-in-node-js
+
+https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
+
+nodejs docker Ubuntu 20
+
+- write from scratch a simple nodejs app
+- dockerize the nodejs app
+- install a doccker mongodb image
+- configure dockercompose to start the two containers aon the same network
+
+let's go
+
+ mkdir nodeproject
+ cd nodeproject
+ sudo apt install npm 
+ npm init
